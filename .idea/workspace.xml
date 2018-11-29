@@ -1,14 +1,282 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc76369c-9100-4511-a569-8631fd06d63c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Agents.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ReplayBuffer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interact_and_train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/plotter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unity-environment.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unity_env.py" afterDir="false" />
+    <list default="true" id="cc76369c-9100-4511-a569-8631fd06d63c" name="Default Changelist" comment="Added initial version of interact_and_train">
+      <change afterPath="$PROJECT_DIR$/src/Actor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Critic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Ornstein_Uhlenbeck_Noise.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Collaboration_and_Competition.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Collaboration_and_Competition.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux.zip" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/Grpc.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/Grpc.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/Mono.Posix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/Mono.Posix.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/Mono.Security.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/Mono.Security.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/System.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/System.Configuration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/System.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/System.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/System.Security.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/System.Security.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/System.Xml.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/System.Xml.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/System.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/System.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AIModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AIModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ARModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ARModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ARModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ARModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AccessibilityModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AccessibilityModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AccessibilityModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AccessibilityModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AnimationModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AnimationModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AnimationModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AnimationModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AssetBundleModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AssetBundleModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AssetBundleModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AssetBundleModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AudioModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AudioModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AudioModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.AudioModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClothModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClothModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClothModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClothModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClusterInputModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClusterInputModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClusterInputModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClusterInputModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClusterRendererModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClusterRendererModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClusterRendererModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ClusterRendererModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.CoreModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.CoreModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.CoreModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.CoreModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.CrashReportingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.CrashReportingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.CrashReportingModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.CrashReportingModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.DirectorModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.DirectorModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.DirectorModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.DirectorModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.GameCenterModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.GameCenterModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.GameCenterModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.GameCenterModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.GridModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.GridModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.GridModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.GridModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.IMGUIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.IMGUIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.IMGUIModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.IMGUIModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ImageConversionModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ImageConversionModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ImageConversionModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ImageConversionModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.InputModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.InputModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.InputModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.InputModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.JSONSerializeModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.JSONSerializeModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.JSONSerializeModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.JSONSerializeModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ParticleSystemModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ParticleSystemModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ParticleSystemModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ParticleSystemModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ParticlesLegacyModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ParticlesLegacyModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ParticlesLegacyModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ParticlesLegacyModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.PerformanceReportingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.PerformanceReportingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.PerformanceReportingModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.PerformanceReportingModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.Physics2DModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.Physics2DModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.Physics2DModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.Physics2DModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.PhysicsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.PhysicsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.PhysicsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.PhysicsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ScreenCaptureModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ScreenCaptureModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ScreenCaptureModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.ScreenCaptureModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SharedInternalsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SharedInternalsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SharedInternalsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SharedInternalsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SpriteMaskModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SpriteMaskModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SpriteMaskModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SpriteMaskModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SpriteShapeModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SpriteShapeModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SpriteShapeModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.SpriteShapeModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.StandardEvents.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.StandardEvents.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.StyleSheetsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.StyleSheetsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.StyleSheetsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.StyleSheetsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TerrainModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TerrainModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TerrainModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TerrainModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TerrainPhysicsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TerrainPhysicsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TextRenderingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TextRenderingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TextRenderingModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TextRenderingModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TilemapModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TilemapModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TilemapModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.TilemapModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UIElementsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UIElementsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UIElementsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UIElementsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UIModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UIModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UNETModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UNETModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UNETModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UNETModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityAnalyticsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityAnalyticsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityConnectModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityConnectModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityConnectModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityConnectModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VRModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VRModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VRModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VRModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VehiclesModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VehiclesModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VehiclesModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VehiclesModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VideoModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VideoModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VideoModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.VideoModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.WebModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.WebModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.WebModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.WebModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.WindModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.WindModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.WindModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.WindModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Managed/UnityEngine.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/2.0/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/2.0/machine.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/2.0/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/2.0/settings.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/2.0/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/2.0/web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.0/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.0/machine.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.0/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.0/settings.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.0/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.0/web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.5/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.5/machine.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.5/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.5/settings.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.5/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/4.5/web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/browscap.ini" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/browscap.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/mconfig/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/MonoBleedingEdge/etc/mono/mconfig/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Resources/UnityPlayer.png" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Resources/UnityPlayer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Resources/unity default resources" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Resources/unity default resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Resources/unity_builtin_extra" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/Resources/unity_builtin_extra" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/boot.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/resources.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/sharedassets0.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Soccer_Linux/Soccer_Data/sharedassets0.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux.zip" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/Grpc.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/Grpc.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/Mono.Posix.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/Mono.Posix.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/Mono.Security.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/Mono.Security.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/System.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/System.Configuration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/System.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/System.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/System.Security.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/System.Security.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/System.Xml.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/System.Xml.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/System.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/System.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AIModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AIModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ARModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ARModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ARModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ARModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AccessibilityModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AccessibilityModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AccessibilityModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AccessibilityModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AnimationModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AnimationModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AnimationModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AnimationModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AssetBundleModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AssetBundleModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AssetBundleModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AssetBundleModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AudioModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AudioModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AudioModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.AudioModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClothModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClothModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClothModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClothModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClusterInputModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClusterInputModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClusterInputModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClusterInputModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClusterRendererModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClusterRendererModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClusterRendererModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ClusterRendererModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.CoreModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.CoreModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.CoreModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.CoreModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.CrashReportingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.CrashReportingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.CrashReportingModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.CrashReportingModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.DirectorModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.DirectorModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.DirectorModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.DirectorModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.GameCenterModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.GameCenterModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.GameCenterModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.GameCenterModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.GridModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.GridModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.GridModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.GridModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.IMGUIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.IMGUIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.IMGUIModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.IMGUIModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ImageConversionModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ImageConversionModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ImageConversionModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ImageConversionModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.InputModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.InputModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.InputModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.InputModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.JSONSerializeModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.JSONSerializeModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.JSONSerializeModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.JSONSerializeModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ParticleSystemModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ParticleSystemModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ParticleSystemModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ParticleSystemModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ParticlesLegacyModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ParticlesLegacyModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ParticlesLegacyModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ParticlesLegacyModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.PerformanceReportingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.PerformanceReportingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.PerformanceReportingModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.PerformanceReportingModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.Physics2DModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.Physics2DModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.Physics2DModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.Physics2DModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.PhysicsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.PhysicsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.PhysicsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.PhysicsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ScreenCaptureModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ScreenCaptureModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ScreenCaptureModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.ScreenCaptureModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SharedInternalsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SharedInternalsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SharedInternalsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SharedInternalsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SpriteMaskModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SpriteMaskModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SpriteMaskModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SpriteMaskModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SpriteShapeModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SpriteShapeModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SpriteShapeModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.SpriteShapeModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.StandardEvents.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.StandardEvents.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.StyleSheetsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.StyleSheetsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.StyleSheetsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.StyleSheetsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TerrainModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TerrainModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TerrainModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TerrainModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TerrainPhysicsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TerrainPhysicsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TextRenderingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TextRenderingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TextRenderingModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TextRenderingModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TilemapModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TilemapModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TilemapModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.TilemapModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UIElementsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UIElementsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UIElementsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UIElementsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UIModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UIModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UNETModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UNETModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UNETModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UNETModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityAnalyticsModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityAnalyticsModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityConnectModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityConnectModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityConnectModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityConnectModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VRModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VRModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VRModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VRModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VehiclesModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VehiclesModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VehiclesModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VehiclesModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VideoModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VideoModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VideoModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.VideoModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.WebModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.WebModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.WebModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.WebModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.WindModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.WindModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.WindModule.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.WindModule.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Managed/UnityEngine.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/2.0/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/2.0/machine.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/2.0/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/2.0/settings.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/2.0/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/2.0/web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.0/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.0/machine.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.0/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.0/settings.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.0/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.0/web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.5/machine.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.5/machine.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.5/settings.map" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.5/settings.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.5/web.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/4.5/web.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/browscap.ini" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/browscap.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/mconfig/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/MonoBleedingEdge/etc/mono/mconfig/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Resources/UnityPlayer.png" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Resources/UnityPlayer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Resources/unity default resources" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Resources/unity default resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Resources/unity_builtin_extra" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/Resources/unity_builtin_extra" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/boot.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/resources.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/envs/Tennis_Linux/Tennis_Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Agents.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReplayBuffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReplayBuffer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interact_and_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interact_and_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity-environment.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity-environment.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity_env.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +286,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/interact_and_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="179">
+              <caret line="79" selection-start-line="79" selection-end-line="100" selection-end-column="7" />
               <folding>
                 <element signature="e#56#74#0" expanded="true" />
               </folding>
@@ -31,10 +299,79 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plotter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Agents.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+            <state relative-caret-position="255">
+              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ReplayBuffer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Critic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="48" lean-forward="true" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+              <folding>
+                <element signature="e#1#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/torch/nn/modules/module.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="496" selection-start-line="496" selection-end-line="496" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Actor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="52" />
+              <folding>
+                <element signature="e#1#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ornstein_Uhlenbeck_Noise.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -42,7 +379,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/unity_env.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="840">
               <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -60,6 +397,20 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>params</find>
+      <find>Critic</find>
+      <find>state</find>
+      <find>Actor</find>
+      <find>noise</find>
+      <find>buffer_s</find>
+      <find>batc</find>
+      <find>gamma</find>
+      <find>dev</find>
+      <find>dim</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src" />
   </component>
@@ -67,8 +418,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Agent.py" />
-        <option value="$PROJECT_DIR$/src/Agents.py" />
+        <option value="$PROJECT_DIR$/src/plotter.py" />
+        <option value="$PROJECT_DIR$/src/Ornstein_Uhlenbeck_Noise.py" />
+        <option value="$PROJECT_DIR$/src/Actor.py" />
         <option value="$PROJECT_DIR$/src/interact_and_train.py" />
+        <option value="$PROJECT_DIR$/src/Critic.py" />
+        <option value="$PROJECT_DIR$/src/Agents.py" />
       </list>
     </option>
   </component>
@@ -84,7 +439,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -112,10 +466,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -129,7 +485,91 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Agents">
+    <configuration name="Actor" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Collaboration_and_Competition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Actor.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Agents" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Collaboration_and_Competition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Agents.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Critic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Collaboration_and_Competition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Critic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Ornstein_Uhlenbeck_Noise" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Collaboration_and_Competition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Ornstein_Uhlenbeck_Noise.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="interact_and_train" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Collaboration_and_Competition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,6 +593,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Agents" />
+        <item itemvalue="Python.Actor" />
+        <item itemvalue="Python.Critic" />
+        <item itemvalue="Python.Ornstein_Uhlenbeck_Noise" />
         <item itemvalue="Python.interact_and_train" />
       </list>
     </recent_temporary>
@@ -168,18 +612,26 @@
       <option name="presentableId" value="Default" />
       <updated>1542857709069</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added initial version of interact_and_train">
+      <created>1542883726987</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542883726987</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="69" y="25" width="1851" height="1055" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24972677" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -192,6 +644,21 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added initial version of interact_and_train" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added initial version of interact_and_train" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/Critic.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -248,16 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/unity_env.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/unityagents/environment.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -265,19 +722,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agents.py">
+    <entry file="file://$PROJECT_DIR$/src/unity_env.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        <state relative-caret-position="840">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/torch/nn/modules/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="496" selection-start-line="496" selection-end-line="496" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ornstein_Uhlenbeck_Noise.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Actor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="52" />
+          <folding>
+            <element signature="e#1#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/interact_and_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="179">
+          <caret line="79" selection-start-line="79" selection-end-line="100" selection-end-column="7" />
           <folding>
             <element signature="e#56#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Critic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="48" lean-forward="true" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+          <folding>
+            <element signature="e#1#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ReplayBuffer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agents.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
