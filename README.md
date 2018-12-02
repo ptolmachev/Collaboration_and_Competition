@@ -163,10 +163,10 @@ parameters for Ornstein-Uhlenbeck noise were set to: mu = 0, sigma = 0.2, theta 
 
 | Layer   | (in, out)          | Activation|
 |---------|--------------------|-----------|
-| Layer 1 | (32, `action_size`)| `linear`  |
-| Layer 2 | (`state_size`, 128) | `relu`   |
-| Layer 3 | (32, `action_size`)| `linear`  |
-| Layer 4 | (128, 32)          | `relu`    |
+| Layer 1 | (`state_size`, 128)| `linear`  |
+| Layer 2 | (128, 128)         | `relu`   |
+| Layer 3 | (128, 32)          | `linear`  |
+| Layer 4 | (32, 32)           | `relu`    |
 | Layer 5 | (32, `action_size`)| `linear`  |
 | Layer 6 | (`action_size`, `action_size`) | `tanh` |
 
@@ -176,10 +176,10 @@ parameters for Ornstein-Uhlenbeck noise were set to: mu = 0, sigma = 0.2, theta 
 
 | Layer   | (in, out)          | Activation|
 |---------|--------------------|-----------|
-| Layer 1 | (32, `action_size`)| `linear`  |
-| Layer 2 | (`state_size`, 128) | `relu`   |
-| Layer 3 | (32, `action_size`)| `linear`  |
-| Layer 4 | (128, 32)          | `relu`    |
+| Layer 1 | (`state_size`, 128)| `linear`  |
+| Layer 2 | (128, 128)         | `relu`   |
+| Layer 3 | (128, 32)          | `linear`  |
+| Layer 4 | (32, 32)           | `relu`    |
 | Layer 5 | (32, `action_size`)| `linear`  |
 
 
