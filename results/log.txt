@@ -1,0 +1,101 @@
+Episode 100	Average Score: 0.028000
+Episode 200	Average Score: 0.027000
+Episode 300	Average Score: 0.063600
+Episode 400	Average Score: 0.045600
+Episode 500	Average Score: 0.080200
+Episode 600	Average Score: 0.022000
+Episode 700	Average Score: 0.056400
+Episode 800	Average Score: 0.060800
+Episode 900	Average Score: 0.066000
+Episode 1000	Average Score: 0.148500
+Episode 1100	Average Score: 0.183200
+Episode 1200	Average Score: 0.168900
+Episode 1300	Average Score: 0.157900
+Episode 1400	Average Score: 0.180800
+Episode 1500	Average Score: 0.129600
+Episode 1600	Average Score: 0.054900
+Episode 1700	Average Score: 0.169500
+Episode 1800	Average Score: 0.226300
+Episode 1900	Average Score: 0.197000
+Episode 2000	Average Score: 0.229100
+Episode 2100	Average Score: 0.289600
+Episode 2200	Average Score: 0.268100
+Episode 2300	Average Score: 0.178000
+Episode 2400	Average Score: 0.181000
+Episode 2500	Average Score: 0.298700
+Episode 2600	Average Score: 0.275500
+Episode 2700	Average Score: 0.225700
+Episode 2800	Average Score: 0.199400
+Episode 2900	Average Score: 0.310700
+Episode 2962	 Average Score: 0.505700	 Current Score : 0.9000000134110451	 epsilon :0.0165
+Environment achieved average score 0.505700 in 2962 episodes!
+environment saved to  ../results/Tennis_0.51.prms
+Episode 2963	 Average Score: 0.506700	 Current Score : 0.4000000059604645	 epsilon :0.0165
+Environment achieved average score 0.506700 in 2963 episodes!
+environment saved to  ../results/Tennis_0.51.prms
+Episode 2964	 Average Score: 0.518700	 Current Score : 1.4000000208616257	 epsilon :0.0165
+Environment achieved average score 0.518700 in 2964 episodes!
+environment saved to  ../results/Tennis_0.52.prms
+Episode 2966	 Average Score: 0.537800	 Current Score : 2.400000035762787	 epsilon :0.0164
+Environment achieved average score 0.537800 in 2966 episodes!
+environment saved to  ../results/Tennis_0.54.prms
+Episode 2967	 Average Score: 0.537900	 Current Score : 0.20000000298023224	 epsilon :0.0164
+Environment achieved average score 0.537900 in 2967 episodes!
+environment saved to  ../results/Tennis_0.54.prms
+Episode 2969	 Average Score: 0.538900	 Current Score : 0.30000000447034836	 epsilon :0.0164
+Environment achieved average score 0.538900 in 2969 episodes!
+environment saved to  ../results/Tennis_0.54.prms
+Episode 2970	 Average Score: 0.539800	 Current Score : 0.1900000050663948	 epsilon :0.0164
+Environment achieved average score 0.539800 in 2970 episodes!
+environment saved to  ../results/Tennis_0.54.prms
+Episode 2971	 Average Score: 0.541900	 Current Score : 0.4000000059604645	 epsilon :0.0163
+Environment achieved average score 0.541900 in 2971 episodes!
+environment saved to  ../results/Tennis_0.54.prms
+Episode 2972	 Average Score: 0.555000	 Current Score : 1.600000023841858	 epsilon :0.0163
+Environment achieved average score 0.555000 in 2972 episodes!
+environment saved to  ../results/Tennis_0.56.prms
+Episode 2973	 Average Score: 0.569000	 Current Score : 1.5000000223517418	 epsilon :0.0163
+Environment achieved average score 0.569000 in 2973 episodes!
+environment saved to  ../results/Tennis_0.57.prms
+Episode 2992	 Average Score: 0.570100	 Current Score : 0.30000000447034836	 epsilon :0.0160
+Environment achieved average score 0.570100 in 2992 episodes!
+environment saved to  ../results/Tennis_0.57.prms
+Episode 2993	 Average Score: 0.572100	 Current Score : 0.5000000074505806	 epsilon :0.0159
+Environment achieved average score 0.572100 in 2993 episodes!
+environment saved to  ../results/Tennis_0.57.prms
+Episode 2994	 Average Score: 0.583100	 Current Score : 1.5000000223517418	 epsilon :0.0159
+Environment achieved average score 0.583100 in 2994 episodes!
+environment saved to  ../results/Tennis_0.58.prms
+Episode 2995	 Average Score: 0.594200	 Current Score : 1.4000000208616257	 epsilon :0.0159
+Environment achieved average score 0.594200 in 2995 episodes!
+environment saved to  ../results/Tennis_0.59.prms
+Episode 2996	 Average Score: 0.595200	 Current Score : 0.30000000447034836	 epsilon :0.0159
+Environment achieved average score 0.595200 in 2996 episodes!
+environment saved to  ../results/Tennis_0.6.prms
+Episode 3000	Average Score: 0.589300
+Episode 3100	Average Score: 0.278700
+Episode 3200	Average Score: 0.586300
+Episode 3205	 Average Score: 0.603200	 Current Score : 1.4000000208616257	 epsilon :0.0125
+Environment achieved average score 0.603200 in 3205 episodes!
+environment saved to  ../results/Tennis_0.6.prms
+Episode 3206	 Average Score: 0.605200	 Current Score : 0.30000000447034836	 epsilon :0.0125
+Environment achieved average score 0.605200 in 3206 episodes!
+environment saved to  ../results/Tennis_0.61.prms
+Episode 3300	Average Score: 0.448000
+Episode 3400	Average Score: 0.343200
+Episode 3500	Average Score: 0.193700
+Episode 3600	Average Score: 0.329800
+Episode 3700	Average Score: 0.294600
+Episode 3800	Average Score: 0.304800
+Episode 3900	Average Score: 0.372000
+Episode 4000	Average Score: 0.490800
+Episode 4100	Average Score: 0.218700
+Episode 4200	Average Score: 0.198700
+Episode 4300	Average Score: 0.172400
+Episode 4400	Average Score: 0.334900
+Episode 4500	Average Score: 0.250800
+Episode 4600	Average Score: 0.320600
+Episode 4700	Average Score: 0.336800
+Episode 4800	Average Score: 0.375800
+Episode 4900	Average Score: 0.349500
+Episode 5000	Average Score: 0.262600
