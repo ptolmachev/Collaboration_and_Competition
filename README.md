@@ -16,10 +16,11 @@ This yields 2 (potentially different) scores. One then takes the maximum of thes
 This yields a single score for each episode.
 **The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5**.
 
-### Environment visualisation (untrained agent)
+### Environment visualisation 
 <p align="center">
 <https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/img/Tennis_performance.gif"/>
 </p>
+
 
 ### Environment setup
 Install Unity3d:
@@ -199,6 +200,8 @@ The weight of the network of trained agent are located in 'results' directory
 Here is the plot of an Agent's performacne, which achieved the 0.5 score in 2962 episodes:
 
 ![scores](https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/img/res5.png)
+
+the log of the training may be found here: ![full log](https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/results/log.txt)
 
 ### Suggested improvements
 There a many possible venues of boosting the algorithm's performance:
