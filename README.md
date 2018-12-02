@@ -1,6 +1,6 @@
 # Collaboration_and_Competition
 
-Udacity Reinforcment learning online course project 3 solution.
+Udacity Reinforcment learning online course project 3 solution and the **report**.
 
 ### Project description
 This is an implementation of self-playing DDPG (Deep Deterministic Policy Gradient) algorithm applied to solve the specified below task.
