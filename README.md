@@ -5,13 +5,11 @@ Udacity Reinforcment learning online course project 3 solution.
 ### Project description
 This is an implementation of self-playing DDPG (Deep Deterministic Policy Gradient) algorithm applied to solve the specified below task.
 
-In this environment,called Tennis, two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1. If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01. Thus, the goal of each agent is to keep the ball in play.
+In this environment, called Tennis, two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1. If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01. Thus, the goal of each agent is to keep the ball in play.
 
 The observation space consists of 24 variables corresponding to the position and velocity of the ball and racket (8 variables) of the three last frames. Each agent receives its own, local observation. Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping.
 
-
-
-- **Solution criteria**
+**Solution criteria**
 The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents).
 After each episode, one adda up the rewards that each agent received (without discounting), to get a score for each agent. 
 This yields 2 (potentially different) scores. One then takes the maximum of these 2 scores.
@@ -92,8 +90,7 @@ The corresponding implementation of abovementioned algorithm is stated below wit
 
 To solve the task one self-playing Agent was initialized. The Agent then decided which acktion to make for both rackets base on local obseravations:
 
-```
-python
+```python
   for e in range(num_episodes):
       scores = np.zeros(num_agents)
       # get the initial state
@@ -160,7 +157,7 @@ params['threshold'] = 0.5            # the score above which the network paramet
 ```
 parameters for Ornstein-Uhlenbeck noise were set to: mu = 0, sigma = 0.2, theta = 0.15
 
-The network architecture for actor:
+**The network architecture for actor**:
 
 | Layer   | (in, out)          | Activation|
 |---------|--------------------|-----------|
@@ -173,7 +170,7 @@ The network architecture for actor:
 
 + Orstein-Uhlenbeck noise of the output, then the entries in the action vector wer clipped to fit [-1 1] range.
 
-The network architecture for critic:
+**The network architecture for critic**:
 
 | Layer   | (in, out)          | Activation|
 |---------|--------------------|-----------|
@@ -196,15 +193,21 @@ The implementation is stored in the folder 'src', which includes:
 - `plotter.py` - generates the plot of scores acquired during the training.
 - `perform.py` - Initialises an agent with specified state dictionary and architecture loaded from file and then runs visualisation of the agent's performance.
 
+The weight of the network of trained agent are located in 'results' directory
+
 
 ### Performance of a trained agent
+Here is the plot of an Agent's performacne, which achieved the 0.5 score in 2962 episodes:
 
 ![scores](https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/img/res4.png)
 
-Weights and parameters of trained neural network can be found here:
-[QNetwork-weights](https://github.com/ptolmachev/Collaboration_and_Competition/tree/master/results/)
 
 ### Suggested further improvements
 There a many possible venues of boosting the algorithm's performance:
-- Reduce the state vector by the factor of 2 in size by extracting parameters of the ball from the corresponding parameters of the racket (unfortunately I couldn't do this, because there is no explanation which parameters are which in the state vector) 
+- Reduce the state vector by the factor of 2 in size by extracting parameters of the ball from the corresponding parameters of the racket (unfortunately, I couldn't do this, because there is no explanation which parameters in the state vector are which) 
+- Try other strategies like:
+    - Initializing two completely separated agents (both having their own Actor and Critic networks)
+    - Initializing Agents with the same Critic network but utilising different Actor networks
+- It may be of worth to make Replay Buffer to sample the experiences from the memory based on their priority (Prioritised Experience Replay)
+- Parameter noise seems to perform better if implemented correctly (see https://blog.openai.com/better-exploration-with-parameter-noise/)
 - There is always a room to tune some hyperparamters!
