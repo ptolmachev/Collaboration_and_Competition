@@ -201,7 +201,7 @@ Here is the plot of an Agent's performacne, which achieved the 0.5 score in 2962
 
 ![scores](https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/img/res5.png)
 
-the log of the training may be found here: ![full log](https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/results/log.txt)
+the log of the training may be found here: [full log](https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/results/log.txt)
 
 ### Suggested improvements
 There a many possible venues of boosting the algorithm's performance:
