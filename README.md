@@ -198,7 +198,7 @@ The weight of the network of trained agent are located in 'results' directory
 ### Performance of a trained agent
 Here is the plot of an Agent's performacne, which achieved the 0.5 score in 2962 episodes:
 
-![scores](https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/img/res4.png)
+![scores](https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/img/res5.png)
 
 ### Suggested improvements
 There a many possible venues of boosting the algorithm's performance:
