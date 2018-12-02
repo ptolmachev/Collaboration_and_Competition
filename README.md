@@ -17,6 +17,7 @@ This yields a single score for each episode.
 **The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5**.
 
 ### Environment visualisation 
+
 <p align="center">
 <https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/img/Tennis_performance.gif"/>
 </p>
