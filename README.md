@@ -18,9 +18,8 @@ This yields a single score for each episode.
 
 ### Environment visualisation 
 
-
 <p align="center">
-<https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/img/Tennis_performance.gif"/>
+<img src="https://github.com/ptolmachev/Continuous_Control/blob/master/img/Reacher.gif"/>
 </p>
 
 
