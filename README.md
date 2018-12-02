@@ -170,7 +170,7 @@ parameters for Ornstein-Uhlenbeck noise were set to: mu = 0, sigma = 0.2, theta 
 | Layer 5 | (32, `action_size`)| `linear`  |
 | Layer 6 | (`action_size`, `action_size`) | `tanh` |
 
-+ Orstein-Uhlenbeck noise of the output, then the entries in the action vector wer clipped to fit [-1 1] range.
+Orstein-Uhlenbeck noise applied to the output, aftewards the entries in the action vector were clipped to fit [-1 1] range.
 
 **The network architecture for critic**:
 
