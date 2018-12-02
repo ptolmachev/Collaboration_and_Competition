@@ -88,7 +88,7 @@ The corresponding implementation of abovementioned algorithm is stated below wit
         # ^ update the actor network (policy)
 ```
 
-To solve the task one self-playing Agent was initialized. The Agent then decided which acktion to make for both rackets base on local obseravations:
+To solve the task one self-playing Agent was initialized. The Agent then decided for every racket which action to take (based on local observations):
 
 ```python
   for e in range(num_episodes):
@@ -134,24 +134,24 @@ To solve the task one self-playing Agent was initialized. The Agent then decided
 The following hyperparameters were used:
 
 ```python
-params['num_agents'] = num_agents
+params['num_agents'] = num_agents   # 2
 params['num_episodes'] = 5000       #number of episodes for agent to interact with the environment
-params['action_size'] = action_size
-params['state_size'] = state_size
+params['action_size'] = action_size # 2
+params['state_size'] = state_size   # 24
 params['buffer_size'] = int(1e5)    # replay buffer size
 params['batch_size'] = 128          # minibatch size
 params['gamma'] = 0.99              # discount factor
 params['tau'] = 1e-2                # for soft update of target parameters
 params['eps'] = 0.5                 # exploration factor (modifies noise)
 params['min_eps'] = 0.005           # min level of noise
-min_e = params['min_eps']
+min_e = params['min_eps']           
 e = params['eps']
 N = params['num_episodes']
 params['eps_decay'] = np.exp(np.log(min_e/e)/(0.8*N)) #decay of the level of the noise after each episode
 params['lr'] = 5e-4                # learning rate
 params['update_every'] = 1         # how often to update the network (every update_every timestep)
 params['seed'] = np.random.randint(0,100)
-params['noise_type'] = 'action_noise'     # noise type; can be 'action' or 'parameter'
+params['noise_type'] = 'action_noise'     # noise type; can be 'action_noise' or 'parameter_noise'
 params['save_to'] = ('../results/' + env_name) # where to save the results to
 params['threshold'] = 0.5            # the score above which the network parameters are saved
 ```
@@ -188,21 +188,19 @@ The implementation is stored in the folder 'src', which includes:
 - `Agent.py` - contains the implementation of an agent.
 - `ReplayBuffer.py` - implementation of internal buffer to sample the experiences from it.
 - `Ornstein_Uhlenbeck_Noise.py` - contains class to generate correlated noise (random walk)
-- `Critic.py` - an ANN to evaluate q-function.
+- `Critic.py` - an ANN to evaluate the value of the undertaken action.
 - `Actor.py` - an ANN to choose action.
 - `plotter.py` - generates the plot of scores acquired during the training.
-- `perform.py` - Initialises an agent with specified state dictionary and architecture loaded from file and then runs visualisation of the agent's performance.
+- `perform.py` - Initializes an agent with specified state dictionary and architecture loaded from file and then runs visualization of the agent's performance.
 
 The weight of the network of trained agent are located in 'results' directory
-
 
 ### Performance of a trained agent
 Here is the plot of an Agent's performacne, which achieved the 0.5 score in 2962 episodes:
 
 ![scores](https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/img/res4.png)
 
-
-### Suggested further improvements
+### Suggested improvements
 There a many possible venues of boosting the algorithm's performance:
 - Reduce the state vector by the factor of 2 in size by extracting parameters of the ball from the corresponding parameters of the racket (unfortunately, I couldn't do this, because there is no explanation which parameters in the state vector are which) 
 - Try other strategies like:
