@@ -22,20 +22,6 @@ This yields a single score for each episode.
 <img src="https://github.com/ptolmachev/Collaboration_and_Competition/blob/master/img/Tennis_performance.gif"/>
 </p>
 
-
-### Environment setup
-Install Unity3d:
-https://unity3d.com/get-unity/download
-
-For detailed Python environment setup (PyTorch, the ML-Agents toolkit, and a few more Python packages) please follow these steps:
-[link](https://github.com/udacity/deep-reinforcement-learning#dependencies)
-
-Download pre-built Unity Environment:
-  - [Linux](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
-  - [Mac](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
-  - [Win x32](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip)
-  - [Win x64](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
-
 ### Theoretical background
 The DDPG algorithm was firstly presented in the papaer [Lillicrap et. al](https://arxiv.org/abs/1509.02971).
 The pseudocode for this algorithm can be summarised as following:
